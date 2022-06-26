@@ -6,11 +6,11 @@ lower = string.ascii_lowercase
 
 input_string = input("Enter string: ")
 target_string = input("Input target string: ")
-s = "cvpbPGS{P7e1S_54I35_71Z3}"
+# s = "cvpbPGS{P7e1S_54I35_71Z3}"
 
 for i in range(0, 26):
     out = ""
-    for char in s:
+    for char in input_string:
         if char in upper:
             out += chr(((ord(char) - 65 + i) % 26) + 65)
             continue
