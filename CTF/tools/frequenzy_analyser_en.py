@@ -63,4 +63,3 @@ for char in cipher_text:
         continue
 
     print(char, end="")
-
