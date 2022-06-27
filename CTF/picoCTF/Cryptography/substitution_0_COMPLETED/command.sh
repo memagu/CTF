@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cat message.txt | python substitution0.py | grep -aoE "picoCTF{.*?}" --color=none
+cat message.txt | tr EKSZJTMCXOQUDYLFABGPHNRVIWekszjtmcxoqudylfabgphneviw ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz | grep -aoE "picoCTF{.*?}" --color=none
