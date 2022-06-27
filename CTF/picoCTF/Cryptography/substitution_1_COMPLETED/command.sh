@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo -e "$(cat message.txt)\nzdifIECqoajqfuecfuixzelusrykh=picoCTFhlgshortforcapturemndw" | python ../../../tools/frequenzy_analyser_en.py | grep -aoE "picoCTF{.*?}" --color=none
+echo -e "$(cat message.txt)\nzdifIECqoajqfuecfuixzelusrykhn=picoCTFhlgshortforcapturemndwq" | python ../../../tools/frequenzy_analyser_en.py | grep -aoE "picoCTF{.*?}" --color=none
