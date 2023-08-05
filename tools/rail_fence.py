@@ -3,71 +3,62 @@
 # https://en.wikipedia.org/wiki/Rail_fence_cipher
 
 from collections import deque
+from functools import reduce
 import string
 import sys
 
-
-def encrypt(plaintext: str, rail_count: int = 3) -> str:
-	rails = [''] * rail_count
+def generate_zigzag_indices(length: int, rail_count: int) -> list[int]:
+	rails = [[] for _ in range(rail_count)]
 	gaps = rail_count - 1
 
 	rail = 0
 	direction = 1
 
-	for char in plaintext:
-		if char not in string.ascii_letters:
-			continue
-
-		rails[rail] += char
+	for i in range(length):
+		rails[rail].append(i)
 		rail += direction
 
 		if rail == 0 or rail == gaps:
 			direction *= -1
 
-	return ' '.join(rails)
+	return reduce(lambda x, y: x.extend(y) or x, rails, [])
 
 
+def encrypt(plaintext: str, rail_count: int) -> str:
+	result = []
 
-def decrypt(ciphertext: str) -> str:
-	rails = [deque(rail) for rail in ciphertext.split()]
-	gaps = len(rails) - 1
+	for i in generate_zigzag_indices(len(plaintext), rail_count):
+		result.append(plaintext[i])
 
-	result = ""
-	rail = 0
-	direction = -1
+	return ''.join(result)
 
-	for i in range(len(ciphertext) - gaps):
-		if not i % gaps:
-			direction *= -1
 
-		result += rails[rail].popleft()
-		rail += direction
+def decrypt(ciphertext: str, rail_count: int) -> str:
+	result = [''] * len(ciphertext)
 
-	return result
+	for i, char in zip(generate_zigzag_indices(len(ciphertext), rail_count), ciphertext):
+		result[i] = char
+
+	return ''.join(result)
 
 
 def main():
-	assert(len(sys.argv) in (2, 4))
+	assert(len(sys.argv) == 3)
 
-	mode = sys.argv[1]
+	rail_count = int(sys.argv[1])
+	mode = sys.argv[2]
 
 	assert(mode in ("-e", "-d"))
 
 	text = input().strip()
 
 	if mode == "-e":
-		if not len(sys.argv) == 4:
-			print(encrypt(text))
-			return
-
-		assert(sys.argv[2] == '-r')
-		rails = int(sys.argv[3])
-		print(encrypt(text, rails))
+		print(encrypt(text, rail_count))
 		return
 
 
 	if mode == "-d":
-		print(decrypt(text))
+		print(decrypt(text, rail_count))
 
 
 if __name__ == "__main__":
