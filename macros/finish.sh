@@ -1,7 +1,7 @@
 #!/bin/bash
 
-original_diractory=$(pwd)
+original_directory=$(pwd)
 
 cd ..
 
-mv $original_diractory ${original_diractory}_COMPLETED
+mv $original_directory ${original_directory}_COMPLETED
