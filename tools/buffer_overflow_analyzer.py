@@ -1,3 +1,5 @@
+#!/bin/python
+
 import os
 
 # test_bytes = "\\xf6\\x91\\x04\\x08"
