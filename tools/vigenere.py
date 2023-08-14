@@ -1,84 +1,61 @@
 #!/bin/python
 
+import argparse
 import string
-import math
+import sys
+
+CHARCODE_A = 65
+CHARCODE_a = 97
+ALPHABET_LENGTH = 26
 
 
-charset = string.ascii_uppercase
+def generate_key_offset_map(key: str, mode: str) -> list[int]:
+    assert(mode in ('e', 'd'))
 
-table = []
-for row in range(len(charset)):
-	table.append([])
-	for col in range(len(charset)):
-		table[row].append(charset[(row + col) % len(charset)])
+    sign = 1 if mode == 'e' else -1
 
-
-def encrypt(plaintext: str, key: str) -> str:
-	keystream = (key.upper() * math.ceil(len(plaintext) / len(key)))[:len(plaintext)]
-	result = ""
-	i = 0
-	for char in plaintext:
-		if char not in string.ascii_letters:
-			result += char
-			continue
-		do_lower = False
-		if char in string.ascii_lowercase:
-			do_lower = True
-
-		char = char.upper()
-
-		row = ord(char) - 65
-		col = ord(keystream[i]) - 65
-
-		i += 1
-
-		if not do_lower:
-			result += table[row][col]
-			continue
-		result += table[row][col].lower()
-
-	return result
+    return [(ord(char) - CHARCODE_A ) * sign for char in key.upper()]
 
 
-def decrypt(ciphertext: str, key: str) -> str:
-	keystream = (key.upper() * math.ceil(len(ciphertext) / len(key)))[:len(ciphertext)]
-	result = ""
-	i = 0
-	for char in ciphertext:
-		if char not in string.ascii_letters:
-			result += char
-			continue
+def vingere_cipher(ciphertext: str, offset_map:list[int]) -> str:  # Encrypt/decrypt is decided by negative or positive values in offset map.
+    result = ""
+    offset_map_index = 0
 
-		do_lower = False
-		if char in string.ascii_lowercase:
-			do_lower = True
+    for char in ciphertext:
+        if char not in string.ascii_letters:
+            result += char
+            continue
 
-		char = char.upper()
+        char_offset = CHARCODE_A if char in string.ascii_uppercase else CHARCODE_a
 
-		row = ord(keystream[i]) - 65
-		col = table[row].index(char)
+        result += chr((ord(char) - char_offset + offset_map[offset_map_index % len(offset_map)]) % ALPHABET_LENGTH + char_offset)
 
-		i += 1
+        offset_map_index += 1
 
-		if not do_lower:
-			result += table[0][col]
-			continue
-		result += table[0][col].lower()
-
-	return result
+    return result
 
 
-method = ""
-while True:
-	method = input("Enter method (\u001b[32me\u001b[mncrypt/\u001b[32md\u001b[mecrypt): ")
-	if method in ["e", "d"]:
-		break
-	print("Invalid indput!")
+def main():
+    argument_parser = argparse.ArgumentParser(
+        prog="Vingere",
+        description="A program for Vingere cipher encryption and decryption."
+        )
+    argument_parser.add_argument(
+        "mode",
+        type=str,
+        choices=('e', 'd'),
+        help="Specify mode (encrypt/decrypt)."
+        )
+    argument_parser.add_argument(
+        "key",
+        type=str,
+        help="Key used for cipher."
+        )
+    
+    args = argument_parser.parse_args()
 
-key = input("Enter key: ")
+    print(vingere_cipher(input(), generate_key_offset_map(args.key, args.mode)))
 
-if method == "e":
-	print(encrypt(input("Enter plaintext: "), key))
 
-else:
-	print(decrypt(input("Enter ciphertext: "), key))
+if __name__ == "__main__":
+    main()
