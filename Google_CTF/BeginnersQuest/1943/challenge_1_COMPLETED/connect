@@ -1,0 +1,1 @@
+socat file:`tty`,rawer tcp:otp1.2023-bq.ctfcompetition.com:1337
