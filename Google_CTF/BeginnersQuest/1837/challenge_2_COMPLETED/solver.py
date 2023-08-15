@@ -72,7 +72,7 @@ def debug():
 def main():
     assert('R' == PLAINTEXT_1[1] == PLAINTEXT_1[8] == PLAINTEXT_1[26] == PLAINTEXT_1[33] == PLAINTEXT_1[44])
 
-    correct_transposition_key = tuple()
+    correct_transposition_key = None
     for transposition_key in itertools.permutations(range(ENCRYPTION_COLUMNS)):
         p1 = columnar_untransposition(CIPHERTEXT_1, transposition_key)
         p2 = columnar_untransposition(CIPHERTEXT_2, transposition_key)
