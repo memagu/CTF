@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "CTF{MultiTimePadIsUnbreakable}"
+./decrypt.py | grep -o "CTF{.*}"
