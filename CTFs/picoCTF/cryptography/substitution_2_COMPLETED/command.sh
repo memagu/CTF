@@ -1,3 +1,0 @@
-#!/bin/bash
-
-echo picoCTF{N6R4M_4N41Y515_15_73D10U5_8E1BF808}
