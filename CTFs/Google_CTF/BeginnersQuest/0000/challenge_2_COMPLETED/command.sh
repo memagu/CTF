@@ -1,0 +1,3 @@
+#!/bin/bash
+
+tr "NVPOFSEADQURMIGCZYXBHKLJTW" "LETRSAOFHNGIPBMKDXWCYQUVJZ" < 0000challenge2.txt | grep -o "FLAG{.*}"
