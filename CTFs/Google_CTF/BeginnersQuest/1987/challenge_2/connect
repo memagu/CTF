@@ -1,0 +1,1 @@
+socat -,raw,echo=0 tcp:fortunes-hardened.2023-bq.ctfcompetition.com:1337  

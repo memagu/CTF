@@ -1,0 +1,1 @@
+socat -,raw,echo=0 tcp:fortunes.2023-bq.ctfcompetition.com:1337

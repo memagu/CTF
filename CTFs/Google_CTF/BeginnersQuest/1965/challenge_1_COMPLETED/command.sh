@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "FLAG{MATRIX_IS_A_TWO_DIMENSIONAL_ARRAY}"

@@ -1,0 +1,181 @@
+%PDF-1.7
+%¿÷¢þ
+%QDF-1.0
+
+%% Original object ID: 2 0
+1 0 obj
+<<
+  /Pages 2 0 R
+  /Type /Catalog
+>>
+endobj
+
+%% Original object ID: 1 0
+2 0 obj
+<<
+  /Count 1
+  /Kids [
+    3 0 R
+  ]
+  /MediaBox [
+    0
+    0
+    595
+    842
+  ]
+  /Resources <<
+    /Font <<
+      /F1 <<
+        /BaseFont /Courier
+        /Subtype /Type1
+        /Type /Font
+      >>
+    >>
+    /ProcSet [
+      /PDF
+      /Text
+    ]
+  >>
+  /Type /Pages
+>>
+endobj
+
+%% Page 1
+%% Original object ID: 7 0
+3 0 obj
+<<
+  /Contents 4 0 R
+  /Parent 2 0 R
+  /Type /Page
+>>
+endobj
+
+%% Original object ID: 6 0
+4 0 obj
+[
+  5 0 R
+  7 0 R
+  9 0 R
+]
+endobj
+
+%% Contents for page 1
+%% Original object ID: 3 0
+5 0 obj
+<<
+  /Length 6 0 R
+>>
+stream
+
+    BT
+        /F1 40 Tf
+        20 500 Td
+        (The flag is)'
+        q 1 g
+        10 -100 Td
+        /F1 25 Tf
+        (oh no it didn't work this time)'
+        Q
+    ET
+    
+endstream
+endobj
+
+%QDF: ignore_newline
+6 0 obj
+181
+endobj
+
+%% Contents for page 1
+%% Original object ID: 4 0
+7 0 obj
+<<
+  /Length 8 0 R
+>>
+stream
+40 400 m 40 420 l 50 420 l S
+40 410 m 50 410 l S
+65 400 m 55 400 l 55 420 l S
+70 400 m 70 420 l 80 410 l 80 400 l S
+70 410 m 80 410 l S
+90 410 m 95 410 l 95 400 l 85 400 l 85 420 l 95 420 l S
+110 400 m 105 400 l 105 410 l 100 410 l S
+105 410 m 105 420 l 110 420 l S
+115 400 m 125 400 l 125 410 l 115 410 l 115 420 l 125 420 l S
+140 400 m 130 410 l 140 420 l S
+145 400 m 145 420 l 155 420 l 155 410 l 145 410 l 155 400 l S
+170 400 m 160 400 l 160 420 l 170 420 l S
+160 410 m 170 410 l S
+185 400 m 175 400 l 175 420 l 185 420 l S
+175 410 m 185 410 l S
+190 400 m 190 420 l 200 400 l 200 420 l S
+205 400 m 215 400 l 215 410 l 205 410 l 205 420 l 215 420 l S
+220 400 m 220 420 l S
+220 410 m 230 410 l S
+230 400 m 230 420 l S
+235 400 m 235 420 l 245 420 l 245 400 l 235 400 l S
+255 400 m 255 420 l S
+250 420 m 260 420 l S
+265 400 m 275 400 l 275 410 l 265 410 l 265 420 l 275 420 l S
+280 400 m 290 400 l S
+295 400 m 295 420 l 305 410 l 305 400 l S
+295 410 m 305 410 l S
+310 400 m 310 420 l 320 420 l 320 410 l 310 410 l 320 400 l S
+335 400 m 325 400 l 325 420 l 335 420 l S
+325 410 m 335 410 l S
+340 400 m 350 400 l S
+355 400 m 365 400 l 365 410 l 355 410 l 355 420 l 365 420 l S
+370 400 m 370 420 l 380 410 l 380 400 l S
+370 410 m 380 410 l S
+385 400 m 385 420 l 395 420 l S
+385 410 m 395 410 l S
+410 400 m 400 400 l 400 420 l 410 420 l S
+400 410 m 410 410 l S
+415 400 m 415 420 l 425 420 l 425 410 l 415 410 l 425 400 l S
+430 400 m 435 400 l 435 410 l 440 410 l S
+435 410 m 435 420 l 430 420 l S
+endstream
+endobj
+
+%QDF: ignore_newline
+8 0 obj
+1491
+endobj
+
+%% Contents for page 1
+%% Original object ID: 5 0
+9 0 obj
+<<
+  /Length 10 0 R
+>>
+stream
+35 385 520 50 re f
+endstream
+endobj
+
+%QDF: ignore_newline
+10 0 obj
+18
+endobj
+
+xref
+0 11
+0000000000 65535 f 
+0000000052 00000 n 
+0000000133 00000 n 
+0000000466 00000 n 
+0000000563 00000 n 
+0000000657 00000 n 
+0000000915 00000 n 
+0000000985 00000 n 
+0000002553 00000 n 
+0000002624 00000 n 
+0000002720 00000 n 
+trailer <<
+  /Root 1 0 R
+  /Size 11
+  /ID [<510b7f915f297a57aae8294db5051de2><510b7f915f297a57aae8294db5051de2>]
+>>
+startxref
+2740
+%%EOF
