@@ -1,0 +1,3 @@
+#!/bin/bash
+
+echo "picoCTF{qu1t3_a_v13w_2020}"
